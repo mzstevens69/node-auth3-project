@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const { jwtSecret } = require('../config/secrets')
-
+//const Users = require('../users/users-model.js');
 
 module.exports = (req, res, next) => {
   const token = req.headers.authorization
@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
           })
 
         } else {
-          req.user = { house: decodedToken.house }
+          req.user = { dept: decodedToken.dept }
           next()
         }
       })

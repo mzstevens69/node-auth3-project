@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
         const token = makeToken(user)
 
         res.status(200).json({
-          message: `Welcome ${user.username}!`,
+          message: `Welcome you are logged in ${user.username}!`,
           token,
         });
       } else {
@@ -44,7 +44,7 @@ router.post('/login', (req, res) => {
 
 function makeToken(user) {
   const payload = {
-    house: user.house
+    dept: user.dept
     //subject: user.id, // sub
     // userId: user.id,
     // username: user.username,
